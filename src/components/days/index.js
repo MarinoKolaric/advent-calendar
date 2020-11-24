@@ -1,0 +1,9 @@
+export { Day2 } from "./Day2";
+export { Day5 } from "./Day5";
+export { Day6 } from "./Day6";
+export { Day8 } from "./Day8";
+export { Day12 } from "./Day12";
+export { Day13 } from "./Day13";
+export { Day14 } from "./Day14";
+export { Day21 } from "./Day21";
+export { Day22 } from "./Day22";
