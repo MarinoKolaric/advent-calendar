@@ -2,14 +2,17 @@ import React from "react";
 import { daysReducer } from "../reducers/daysReducer";
 import {
   Day2,
+  Day3,
   Day5,
   Day6,
   Day8,
   Day12,
   Day13,
   Day14,
+  Day15,
   Day21,
   Day22,
+  Day25,
 } from "../components/days";
 
 export const DaysContext = React.createContext();
@@ -51,6 +54,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "1 / 4 / 2 / 5",
+      Component: <Day3 />,
     },
     {
       day: 4,
@@ -141,6 +145,7 @@ const initialState = {
       numPosition: numPosition[2],
       numSize: fontSizes.s,
       area: "3 / 4 / 4 / 5",
+      Component: <Day15 />,
     },
     {
       day: 16,
@@ -213,6 +218,7 @@ const initialState = {
       numPosition: numPosition[2],
       numSize: fontSizes.s,
       area: "4 / 8 / 5 / 9",
+      Component: <Day25 />,
     },
   ],
 };
