@@ -27,19 +27,19 @@ const sights = [
   {
     x: 32,
     y: 18,
-    size: 15,
+    size: 20,
     rotation: 0,
   },
   {
     x: 94,
     y: 50,
-    size: 15,
+    size: 20,
     rotation: 0,
   },
   {
     x: 10,
     y: 70,
-    size: 15,
+    size: 20,
     rotation: 0,
   },
 ];
