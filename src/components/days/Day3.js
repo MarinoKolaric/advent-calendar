@@ -164,7 +164,7 @@ const dots = [
 ];
 
 export const Day3 = () => {
-  const color = theme.color.c5Dark;
+  const color = theme.color.cookie;
   const [size, setSize] = useState(50);
   const ref = useRef(null);
 
