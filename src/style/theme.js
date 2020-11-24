@@ -25,6 +25,9 @@ export const color = {
   c7: "#5A654D",
   c8: "#9D4431",
 
+  cookieBackground: "#f5eed7",
+  cookie: "#cd803d",
+
   countdownBackground: "#383931",
 };
 
