@@ -11,6 +11,7 @@ import {
   Day13,
   Day14,
   Day15,
+  Day19,
   Day21,
   Day22,
   Day25,
@@ -176,6 +177,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.m,
       area: "3 / 8 / 4 / 9",
+      Component: <Day19 />,
     },
     {
       day: 20,
