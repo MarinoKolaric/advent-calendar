@@ -28,6 +28,8 @@ export const color = {
   cookieBackground: "#f5eed7",
   cookie: "#cd803d",
 
+  dayNumberLight: '#fbf7e0',
+
   countdownBackground: "#383931",
 };
 
