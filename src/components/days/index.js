@@ -9,6 +9,7 @@ export { Day13 } from "./Day13";
 export { Day14 } from "./Day14";
 export { Day15 } from "./Day15";
 export { Day16 } from "./Day16";
+export { Day18 } from "./Day18";
 export { Day19 } from "./Day19";
 export { Day21 } from "./Day21";
 export { Day22 } from "./Day22";
