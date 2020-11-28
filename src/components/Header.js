@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import isEmpty from "lodash/isEmpty";
 import { AuthContext } from "../context";
 import { LoginBtn } from "./index";
 import { theme } from "../style";
@@ -34,12 +35,10 @@ const ImgWrapper = styled.div`
 export const Header = () => {
   const { state } = React.useContext(AuthContext);
 
-  console.log("state", state.user);
-
   return (
     <HeaderComponent>
       <Profile>
-        {state?.user && (
+        {!isEmpty(state?.user) && (
           <>
             <ImgWrapper>
               <img
