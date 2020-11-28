@@ -72,7 +72,7 @@ const Container = ({
 
 export const Day = (props) => {
   const { Component } = props;
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
