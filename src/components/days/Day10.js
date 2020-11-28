@@ -39,6 +39,18 @@ const sights = [
     size: 14,
     rotation: 0,
   },
+  {
+    x: 84,
+    y: 40,
+    size: 14,
+    rotation: 35,
+  },
+  {
+    x: 14,
+    y: 40,
+    size: 14,
+    rotation: 45,
+  },
 ];
 
 const dots = [
@@ -62,10 +74,30 @@ const dots = [
     y: 20,
     size: 6,
   },
+  {
+    x: 92,
+    y: 82,
+    size: 6,
+  },
+  {
+    x: 22,
+    y: 74,
+    size: 6,
+  },
+  {
+    x: 66,
+    y: 12,
+    size: 6,
+  },
+  {
+    x: 22,
+    y: 12,
+    size: 6,
+  },
 ];
 
 export const Day10 = () => {
-  const color = theme.color.cookie;
+  const color = theme.color.c4Dark;
   return (
     <DayWrapper>
       {sights.map((x) => (
