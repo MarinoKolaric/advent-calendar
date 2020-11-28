@@ -18,7 +18,7 @@ const Title = styled.h1`
   font-size: 44px;
   font-weight: bold;
   color: ${theme.color.gray4};
-  font-family: "Mountains of Christmas", cursive;
+  font-family: "Concert One", cursive;
   letter-spacing: 10px;
 `;
 
