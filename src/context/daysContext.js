@@ -1,11 +1,13 @@
 import React from "react";
 import { daysReducer } from "../reducers/daysReducer";
 import {
+  Day1,
   Day2,
   Day3,
   Day5,
   Day6,
   Day8,
+  Day10,
   Day11,
   Day12,
   Day13,
@@ -43,6 +45,7 @@ const initialState = {
       numPosition: numPosition[0],
       numSize: fontSizes.m,
       area: "1 / 1 / 2 / 2",
+      Component: <Day1 />,
     },
     {
       day: 2,
@@ -111,6 +114,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "2 / 3 / 3 / 5",
+      Component: <Day10 />,
     },
     {
       day: 11,
