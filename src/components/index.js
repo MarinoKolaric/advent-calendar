@@ -7,3 +7,4 @@ export { Day } from "./Day";
 export { DayModal } from "./DayModal";
 export { Sight } from "./Sight";
 export { Dot } from "./Dot";
+export { Number } from "./Number";
