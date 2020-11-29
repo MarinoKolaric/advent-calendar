@@ -1,24 +1,31 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../style";
 
 const DayWrapper = styled.div`
   background: ${theme.color.c4};
-  /* background: radial-gradient(
-    circle at 25% 55%,
-    ${theme.color.c4Dark} 12%,
-    ${theme.color.c4} 0%
-  ); */
-  background: linear-gradient(
-    to top right,
-    ${theme.color.c4Dark} 10%,
-    ${theme.color.c4} 10% 100%
-  );
-  background-size: 12px 12px;
+  width: 100%;
+  height: 100%;
+`;
+
+const Inner = styled.div`
+  background: radial-gradient(
+      circle at 25% 25%,
+      ${theme.color.c4Dark} 3px,
+      transparent 3px 20px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      ${theme.color.c4Dark} 3px,
+      transparent 3px 20px
+    );
+  background-size: 20px 20px;
   width: 100%;
   height: 100%;
 `;
 
 export const Day2 = () => {
-  return <DayWrapper></DayWrapper>;
+  return <DayWrapper>
+    <Inner />
+  </DayWrapper>;
 };
