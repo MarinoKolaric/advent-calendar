@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Header, CalendarHeader, Calendar } from "./components";
 import { theme } from "./style";
 
-import { AuthProvider, DaysProvider } from "./context";
+import { AuthProvider, DaysProvider, ActiveDayProvider } from "./context";
 
 const Wrapper = styled.div`
   background-color: ${theme.color.background};
@@ -17,11 +17,13 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <DaysProvider>
-          <Wrapper>
-            <Header />
-            <CalendarHeader />
-            <Calendar />
-          </Wrapper>
+          <ActiveDayProvider>
+            <Wrapper>
+              <Header />
+              <CalendarHeader />
+              <Calendar />
+            </Wrapper>
+          </ActiveDayProvider>
         </DaysProvider>
       </AuthProvider>
     </BrowserRouter>

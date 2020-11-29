@@ -23,11 +23,12 @@ import {
 
 export const DaysContext = React.createContext();
 
+
 const fontSizes = {
-  s: "32px",
-  m: "42px",
-  l: "66px",
-  xl: "82px",
+  s: "3em",
+  m: "4em",
+  l: "5em",
+  xl: "6em",
 };
 
 const numPosition = ["center", "topLeft", "topRight"];
