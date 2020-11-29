@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const Box = styled.div`
   position: absolute;
-  width: 400px;
+  width: 100%;
   height: 400px;
   left: 50%;
   top: 50%;
@@ -26,6 +26,11 @@ const Box = styled.div`
   border-radius: 20px;
   overflow: hidden;
   font-size: 28px;
+
+  ${theme.mediaQueries('mobileMedium')`
+    width: 400px;
+    height: 400px;
+  `}
 `;
 
 export const DayModal = ({ handleOpen }) => {
