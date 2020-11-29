@@ -176,8 +176,8 @@ export const Day3 = () => {
 
   return (
     <DayWrapper ref={ref}>
-      {sights.map((x) => (
-        <Sight
+      {sights.map((x,i) => (
+        <Sight key={i}
           x={x.x}
           y={x.y}
           rotation={x.rotation}
@@ -185,8 +185,8 @@ export const Day3 = () => {
           backgroundColor={color}
         />
       ))}
-      {dots.map((x) => (
-        <Dot x={x.x} y={x.y} size={x.size} backgroundColor={color} />
+      {dots.map((x, i) => (
+        <Dot key={i} x={x.x} y={x.y} size={x.size} backgroundColor={color} />
       ))}
       <Cookie size={size}>
         <CookieHead>

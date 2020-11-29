@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { theme } from "../../style";
 import { Sight, Dot } from "../index";
@@ -90,8 +90,9 @@ export const Day11 = () => {
 
   return (
     <DayWrapper ref={ref}>
-      {sights.map((x) => (
+      {sights.map((x, i) => (
         <Sight
+          key={i}
           x={x.x}
           y={x.y}
           rotation={x.rotation}
@@ -99,8 +100,8 @@ export const Day11 = () => {
           backgroundColor={color}
         />
       ))}
-      {dots.map((x) => (
-        <Dot x={x.x} y={x.y} size={x.size} backgroundColor={color} />
+      {dots.map((x, i) => (
+        <Dot key={i} x={x.x} y={x.y} size={x.size} backgroundColor={color} />
       ))}
       <Text size={size}>
         Happy <br></br> Holidays

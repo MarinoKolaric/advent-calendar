@@ -100,8 +100,9 @@ export const Day10 = () => {
   const color = theme.color.c4Dark;
   return (
     <DayWrapper>
-      {sights.map((x) => (
+      {sights.map((x, i) => (
         <Sight
+          key={i}
           x={x.x}
           y={x.y}
           rotation={x.rotation}
@@ -109,8 +110,8 @@ export const Day10 = () => {
           backgroundColor={color}
         />
       ))}
-      {dots.map((x) => (
-        <Dot x={x.x} y={x.y} size={x.size} backgroundColor={color} />
+      {dots.map((x, i) => (
+        <Dot key={i} x={x.x} y={x.y} size={x.size} backgroundColor={color} />
       ))}
       <Svg viewBox="0 0 202 302">
         <g>

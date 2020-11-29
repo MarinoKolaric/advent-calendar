@@ -8,13 +8,14 @@ const DayWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  font-size: 14px;
 `;
 
 const Text = styled.div`
   color: ${theme.color.cookieBackground};
   font-family: "Mountains of Christmas";
   font-size: ${(props) => `${props.size}%`};
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   font-weight: bold;
   position: absolute;
   left: 3%;
@@ -51,19 +52,20 @@ const dots = [
 
 export const Day25 = () => {
   const color = theme.color.cookieBackground;
+
   const [size, setSize] = useState(50);
   const ref = useRef(null);
 
   useEffect(() => {
     if (ref?.current) {
-      setSize(ref.current.offsetWidth * 0.8);
+      setSize(ref.current.offsetWidth);
     }
   }, [ref]);
 
   return (
     <DayWrapper ref={ref}>
-      {sights.map((x) => (
-        <Sight
+      {sights.map((x, i) => (
+        <Sight key={i} 
           x={x.x}
           y={x.y}
           rotation={x.rotation}
@@ -71,8 +73,8 @@ export const Day25 = () => {
           backgroundColor={color}
         />
       ))}
-      {dots.map((x) => (
-        <Dot x={x.x} y={x.y} size={x.size} backgroundColor={color} />
+      {dots.map((x, i) => (
+        <Dot  key={i} x={x.x} y={x.y} size={x.size} backgroundColor={color} />
       ))}
       <Text size={size}>Merry Christmas</Text>
     </DayWrapper>
