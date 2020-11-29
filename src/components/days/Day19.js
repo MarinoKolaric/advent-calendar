@@ -116,7 +116,7 @@ const NoseLine = styled.div`
   left: 50%;
   box-shadow: inset calc(${(props) => `${props.size}px`} * 0.04)
     calc(${(props) => `${props.size}px`} * -0.02) 0
-    calc(${(props) => `${props.size}px`} * -0.02) black;
+    calc(${(props) => `${props.size}px`} * -0.02) ${theme.color.background};
 
   & + & {
     transform-origin: left;
