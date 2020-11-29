@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { theme } from "../style";
-import { DayModal } from "./index";
+import { ActiveDayContext } from "../context";
+import { DayModal, Number } from "./index";
 
 const DayWrapper = styled.div`
   width: auto;
@@ -12,6 +13,7 @@ const DayWrapper = styled.div`
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  font-size: 8px;
 
   ${(props) =>
     props.isOpen &&
@@ -20,39 +22,9 @@ const DayWrapper = styled.div`
     `}
 `;
 
-const Number = styled.div`
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.size};
-  position: absolute;
-  line-height: 1;
-  opacity: 0.8;
-
-  ${(props) =>
-    props.position === "center" &&
-    css`
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    `}
-
-  ${(props) =>
-    props.position === "topLeft" &&
-    css`
-      left: 12px;
-      top: 12px;
-    `}
-  
-  ${(props) =>
-    props.position === "topRight" &&
-    css`
-      right: 12px;
-      top: 12px;
-    `}
-`;
-
 const Container = ({
   isOpen,
-  handleOpen,
+  handleDay,
   numPosition = "left",
   numSize,
   numColor,
@@ -61,30 +33,39 @@ const Container = ({
   Component,
 }) => {
   return (
-    <DayWrapper area={area} onClick={() => handleOpen(!isOpen)}>
+    <DayWrapper area={area} onClick={() => handleDay(!isOpen)}>
       {Component && Component}
-      <Number position={numPosition} size={numSize} color={numColor}>
-        {day}
-      </Number>
+      <Number
+        number={day}
+        position={numPosition}
+        size={numSize}
+        color={numColor}
+      />
     </DayWrapper>
   );
 };
 
 export const Day = (props) => {
-  const { Component } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const { dispatch } = React.useContext(ActiveDayContext);
+
+  const setDay = (isOpen) => {
+    setIsOpen(isOpen);
+    dispatch({
+      type: "ACTIVATE",
+      payload: { ...props, isOpen },
+    });
+  };
 
   return (
     <>
       <Container
         key={props.day}
         {...props}
-        handleOpen={setIsOpen}
+        handleDay={setDay}
         isOpen={isOpen}
       />
-      {isOpen && (
-        <DayModal Component={Component} handleOpen={() => setIsOpen()} />
-      )}
+      {isOpen && <DayModal handleOpen={() => setIsOpen()} />}
     </>
   );
 };
