@@ -30,10 +30,10 @@ class Firebase {
       .auth()
       .signInWithPopup(googleProvider)
       .then((result) => {
-        const token = result.credential.accessToken;
+        // const token = result.credential.accessToken;
         const user = result.user;
         
-        this.addUser(user.uid, user.displayName);
+        this.addUser(user.uid, user.displayName, user.email);
 
         return user;
       })
@@ -55,13 +55,18 @@ class Firebase {
   }
 
   // Add user
-  addUser(uid, name) {
+  addUser(uid, name, email) {
+    const secretUser = process.env.REACT_APP_SECRET_USER;
+    const isSecretUser = secretUser === email;
+
     firebase
       .database()
       .ref("users/" + uid)
       .set({
         username: name,
         uid: uid,
+        email: email,
+        isSecretUser,
       });
   }
 
