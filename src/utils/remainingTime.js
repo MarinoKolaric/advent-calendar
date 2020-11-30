@@ -20,4 +20,3 @@ export const remainingTime = (endDate) => {
   };
 };
 
-remainingTime(new Date("12/25/2020")); //?
