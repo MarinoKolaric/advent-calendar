@@ -1,9 +1,16 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useContext,
+} from "react";
 import styled from "styled-components";
-import { ActiveDayContext } from "../context";
+import { ActiveDayContext, AuthContext } from "../context";
 import { useOnClickOutside, remainingTime } from "../utils";
 import { theme } from "../style";
 import { Number } from "./index";
+import Firebase from "../firebase";
 
 const Wrapper = styled.div`
   background: rgba(51, 51, 51, 0.8);
@@ -44,6 +51,52 @@ const M = styled.div`
   text-align: center;
 `;
 
+const CardWrapper = styled.div`
+  background: ${theme.color.c2Dark};
+  background-size: 12px 12px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+`;
+
+const ImgContainer = styled.div`
+  background: url(${(props) => props.img});
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const Card = ({ day }) => {
+  const [img, setImg] = useState();
+  const { state } = useContext(AuthContext);
+
+  const getPicture = useCallback(async () => {
+    if (!state?.isSecretUser) return;
+    const response = await Firebase.getPicture(day);
+
+    if (response.hasOwnProperty("message")) {
+      setImg("");
+    } else {
+      setImg(response);
+    }
+  }, [day, state]);
+
+  useEffect(() => {
+    getPicture();
+  }, [getPicture]);
+
+  return (
+    <CardWrapper>
+      <ImgContainer img={img} />
+    </CardWrapper>
+  );
+};
+
 export const DayModal = ({ handleOpen }) => {
   const ref = useRef();
   const [date, setDate] = useState({
@@ -62,11 +115,11 @@ export const DayModal = ({ handleOpen }) => {
   useOnClickOutside(
     ref,
     useCallback(() => {
-      handleOpen(false)
+      handleOpen(false);
       dispatch({
         type: "DEACTIVATE",
         payload: {},
-      })
+      });
     }, [dispatch, handleOpen])
   );
 
@@ -81,12 +134,11 @@ export const DayModal = ({ handleOpen }) => {
         : setMessage(`Available in ${hours}h and ${minutes}m`);
       return;
     }
-
-    console.log("i should open");
   };
 
   useEffect(() => {
-    const endDate = new Date(`12/${day.day}/2020`);
+    // const endDate = new Date(`12/${day.day}/2020`);
+    const endDate = new Date(`11/${day.day}/2020`);
     setDate(remainingTime(endDate));
   }, [day]);
 
@@ -103,7 +155,7 @@ export const DayModal = ({ handleOpen }) => {
         {!shouldOpen ? (
           <Message color={day.numColor} message={message} />
         ) : (
-          "Open"
+          <Card day={day.day} />
         )}
       </Box>
     </Wrapper>

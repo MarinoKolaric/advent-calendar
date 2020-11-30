@@ -5,6 +5,7 @@ export const AuthContext = React.createContext();
 
 const initialState = {
   user: {},
+  isSecretUser: false,
 };
 
 export const AuthProvider = (props) => {
