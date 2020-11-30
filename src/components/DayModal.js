@@ -137,8 +137,7 @@ export const DayModal = ({ handleOpen }) => {
   };
 
   useEffect(() => {
-    // const endDate = new Date(`12/${day.day}/2020`);
-    const endDate = new Date(`11/${day.day}/2020`);
+    const endDate = new Date(`12/${day.day}/2020`);
     setDate(remainingTime(endDate));
   }, [day]);
 
