@@ -9,7 +9,7 @@ const DayWrapper = styled.div`
   height: auto;
   background: ${theme.color.c3};
   border-radius: 10px;
-  grid-area: ${(props) => props.area};
+  grid-area: ${props => props.area};
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -30,10 +30,11 @@ const Container = ({
   numColor,
   day,
   area,
+  areaName,
   Component,
 }) => {
   return (
-    <DayWrapper area={area} onClick={() => handleDay(!isOpen)}>
+    <DayWrapper area={areaName} day={day} onClick={() => handleDay(!isOpen)}>
       {Component && Component}
       <Number
         number={day}

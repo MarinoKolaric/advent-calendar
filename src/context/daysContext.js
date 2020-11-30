@@ -47,6 +47,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "1 / 1 / 2 / 2",
       Component: <Day1 />,
+      areaName: "day1",
     },
     {
       day: 2,
@@ -55,6 +56,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "1 / 2 / 2 / 4",
       Component: <Day2 />,
+      areaName: "day2",
     },
     {
       day: 3,
@@ -63,6 +65,7 @@ const initialState = {
       numSize: fontSizes.s,
       area: "1 / 4 / 2 / 5",
       Component: <Day3 />,
+      areaName: "day3",
     },
     {
       day: 4,
@@ -70,6 +73,7 @@ const initialState = {
       numPosition: numPosition[0],
       numSize: fontSizes.m,
       area: "1 / 5 / 3 / 6",
+      areaName: "day4",
     },
     {
       day: 5,
@@ -78,6 +82,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "1 / 6 / 2 / 7",
       Component: <Day5 />,
+      areaName: "day5",
     },
     {
       day: 6,
@@ -86,6 +91,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "1 / 7 / 2 / 9",
       Component: <Day6 />,
+      areaName: "day6",
     },
     {
       day: 7,
@@ -93,6 +99,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "1 / 9 / 2 / 10",
+      areaName: "day7",
     },
     {
       day: 8,
@@ -101,6 +108,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "2 / 1 / 4 / 2",
       Component: <Day8 />,
+      areaName: "day8",
     },
     {
       day: 9,
@@ -108,6 +116,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "2 / 2 / 3 / 3",
+      areaName: "day9",
     },
     {
       day: 10,
@@ -116,6 +125,7 @@ const initialState = {
       numSize: fontSizes.s,
       area: "2 / 3 / 3 / 5",
       Component: <Day10 />,
+      areaName: "day10",
     },
     {
       day: 11,
@@ -124,6 +134,7 @@ const initialState = {
       numSize: fontSizes.s,
       area: "2 / 6 / 3 / 8",
       Component: <Day11 />,
+      areaName: "day11",
     },
     {
       day: 12,
@@ -132,6 +143,7 @@ const initialState = {
       numSize: fontSizes.l,
       area: "2 / 8 / 3 / 10",
       Component: <Day12 />,
+      areaName: "day12",
     },
     {
       day: 13,
@@ -140,6 +152,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "3 / 2 / 4 / 3",
       Component: <Day13 />,
+      areaName: "day13",
     },
     {
       day: 14,
@@ -148,6 +161,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "3 / 3 / 4 / 4",
       Component: <Day14 />,
+      areaName: "day14",
     },
     {
       day: 15,
@@ -156,6 +170,7 @@ const initialState = {
       numSize: fontSizes.s,
       area: "3 / 4 / 4 / 5",
       Component: <Day15 />,
+      areaName: "day15",
     },
     {
       day: 16,
@@ -164,6 +179,7 @@ const initialState = {
       numSize: fontSizes.l,
       area: "3 / 5 / 5 / 6",
       Component: <Day16 />,
+      areaName: "day16",
     },
     {
       day: 17,
@@ -171,6 +187,7 @@ const initialState = {
       numPosition: numPosition[0],
       numSize: fontSizes.m,
       area: "3 / 6 / 4 / 7",
+      areaName: "day17",
     },
     {
       day: 18,
@@ -179,6 +196,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "3 / 7 / 5 / 8",
       Component: <Day18 />,
+      areaName: "day18",
     },
     {
       day: 19,
@@ -187,6 +205,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "3 / 8 / 4 / 9",
       Component: <Day19 />,
+      areaName: "day19",
     },
     {
       day: 20,
@@ -194,6 +213,7 @@ const initialState = {
       numPosition: numPosition[0],
       numSize: fontSizes.m,
       area: "3 / 9 / 5 / 10",
+      areaName: "day20",
     },
     {
       day: 21,
@@ -202,6 +222,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "4 / 1 / 5 / 3",
       Component: <Day21 />,
+      areaName: "day21",
     },
     {
       day: 22,
@@ -210,6 +231,7 @@ const initialState = {
       numSize: fontSizes.xl,
       area: "4 / 3 / 5 / 4",
       Component: <Day22 />,
+      areaName: "day22",
     },
     {
       day: 23,
@@ -217,6 +239,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.m,
       area: "4 / 4 / 5 / 5",
+      areaName: "day23",
     },
     {
       day: 24,
@@ -224,6 +247,7 @@ const initialState = {
       numPosition: numPosition[2],
       numSize: fontSizes.m,
       area: "4 / 6 / 5 / 7",
+      areaName: "day24",
     },
     {
       day: 25,
@@ -232,6 +256,7 @@ const initialState = {
       numSize: fontSizes.s,
       area: "4 / 8 / 5 / 9",
       Component: <Day25 />,
+      areaName: "day25",
     },
   ],
 };

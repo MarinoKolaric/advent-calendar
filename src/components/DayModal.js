@@ -1,7 +1,7 @@
-import React, { useCallback, useRef } from "react";
-import styled, { css } from "styled-components";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 import { ActiveDayContext } from "../context";
-import { useOnClickOutside } from "../utils";
+import { useOnClickOutside, remainingTime } from "../utils";
 import { theme } from "../style";
 import { Number } from "./index";
 
@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
+  overflow: hidden;
 `;
 
 const Box = styled.div`
@@ -26,27 +27,72 @@ const Box = styled.div`
   border-radius: 20px;
   overflow: hidden;
   font-size: 28px;
+  cursor: pointer;
 
-  ${theme.mediaQueries('mobileMedium')`
+  ${theme.mediaQueries("mobileMedium")`
     width: 400px;
     height: 400px;
   `}
 `;
 
+const M = styled.div`
+  position: absolute;
+  color: ${(props) => props.color};
+  height: auto;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+`;
+
 export const DayModal = ({ handleOpen }) => {
   const ref = useRef();
+  const [date, setDate] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+  const [message, setMessage] = useState("");
+  const [shouldOpen, setShouldOpen] = useState(false);
   const {
     state: { day },
+    dispatch,
   } = React.useContext(ActiveDayContext);
 
   useOnClickOutside(
     ref,
-    useCallback(() => handleOpen(false), [handleOpen])
+    useCallback(() => {
+      handleOpen(false)
+      dispatch({
+        type: "DEACTIVATE",
+        payload: {},
+      })
+    }, [dispatch, handleOpen])
   );
+
+  const openBox = () => {
+    const { days, hours, minutes, seconds } = date;
+    setShouldOpen(!days && !hours && !minutes && !seconds);
+    if (!shouldOpen) {
+      days > 0
+        ? days === 1
+          ? setMessage(`Available in ${days} day`)
+          : setMessage(`Available in ${days} days`)
+        : setMessage(`Available in ${hours}h and ${minutes}m`);
+      return;
+    }
+
+    console.log("i should open");
+  };
+
+  useEffect(() => {
+    const endDate = new Date(`12/${day.day}/2020`);
+    setDate(remainingTime(endDate));
+  }, [day]);
 
   return (
     <Wrapper>
-      <Box ref={ref}>
+      <Box ref={ref} onClick={() => openBox()}>
         {day.Component}
         <Number
           number={day.day}
@@ -54,7 +100,16 @@ export const DayModal = ({ handleOpen }) => {
           size={day.numSize}
           color={day.numColor}
         />
+        {!shouldOpen ? (
+          <Message color={day.numColor} message={message} />
+        ) : (
+          "Open"
+        )}
       </Box>
     </Wrapper>
   );
+};
+
+const Message = ({ message, color }) => {
+  return <M color={color}>{message}</M>;
 };
