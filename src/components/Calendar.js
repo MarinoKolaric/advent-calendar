@@ -9,11 +9,8 @@ const CalendarWrapper = styled.div`
   background: ${theme.color.gray1};
   padding: 40px;
   display: grid;
-  /* grid-template-columns: repeat(9, 1fr); */
-  /* grid-template-rows: repeat(4, 1fr); */
   justify-content: center;
   align-content: center;
-  /* grid-column-gap: 8px; */
   grid-row-gap: 8px;
   grid-template-columns: 1fr;
   grid-auto-rows: 200px;
@@ -76,10 +73,23 @@ const CalendarWrapper = styled.div`
   "day24 day24"
   "day25 day25";
   `}
+
+  ${theme.mediaQueries("laptop")`
+  grid-column-gap: 8px;
+  height: 800px;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  grid-template-areas: 
+  "day1 day2 day2 day3 day4 day5 day6 day6 day7"
+  "day8 day9 day10 day10 day4 day11 day11 day12 day12"
+  "day8 day13 day14 day15 day16 day17 day18 day19 day20"
+  "day21 day21 day22 day23 day16 day24 day18 day25 day20";
+  `}
 `;
 
 export const Calendar = () => {
-  const { state, dispatch } = React.useContext(DaysContext);
+  const { state } = React.useContext(DaysContext);
 
   return (
     <CalendarWrapper>
