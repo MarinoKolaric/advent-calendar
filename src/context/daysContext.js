@@ -4,6 +4,7 @@ import {
   Day1,
   Day2,
   Day3,
+  Day4,
   Day5,
   Day6,
   Day8,
@@ -22,7 +23,6 @@ import {
 } from "../components/days";
 
 export const DaysContext = React.createContext();
-
 
 const fontSizes = {
   s: "3em",
@@ -73,6 +73,7 @@ const initialState = {
       numPosition: numPosition[0],
       numSize: fontSizes.m,
       area: "1 / 5 / 3 / 6",
+      Component: <Day4 />,
       areaName: "day4",
     },
     {
