@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../style";
 import { Sight, Dot } from "../index";
 
