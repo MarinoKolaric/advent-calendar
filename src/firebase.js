@@ -71,9 +71,9 @@ class Firebase {
       });
   }
 
-  async getPicture(day) {
+  async getPicture(day, type = 'jpg') {
     const storageRef = storage.refFromURL(
-      `gs://adventcalendar-8f6e0.appspot.com/d${day}.jpg`
+      `gs://adventcalendar-8f6e0.appspot.com/d${day}.${type}`
     );
 
     const result = storageRef

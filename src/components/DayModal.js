@@ -71,20 +71,20 @@ const ImgContainer = styled.div`
   background-repeat: no-repeat;
 `;
 
-const Card = ({ day }) => {
+const Card = ({ day, type }) => {
   const [img, setImg] = useState();
   const { state } = useContext(AuthContext);
 
   const getPicture = useCallback(async () => {
     if (!state?.isSecretUser) return;
-    const response = await Firebase.getPicture(day);
+    const response = await Firebase.getPicture(day, type);
 
     if (response.hasOwnProperty("message")) {
       setImg("");
     } else {
       setImg(response);
     }
-  }, [day, state]);
+  }, [day, state, type]);
 
   useEffect(() => {
     getPicture();
@@ -137,7 +137,8 @@ export const DayModal = ({ handleOpen }) => {
   };
 
   useEffect(() => {
-    const endDate = new Date(`12/${day.day}/2020`);
+    // const endDate = new Date(`12/${day.day}/2020`);
+    const endDate = new Date(`11/${day.day}/2020`);
     setDate(remainingTime(endDate));
   }, [day]);
 
@@ -154,7 +155,7 @@ export const DayModal = ({ handleOpen }) => {
         {!shouldOpen ? (
           <Message color={day.numColor} message={message} />
         ) : (
-          <Card day={day.day} />
+          <Card day={day.day} type={day.type} />
         )}
       </Box>
     </Wrapper>

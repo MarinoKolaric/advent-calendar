@@ -93,6 +93,7 @@ const initialState = {
       area: "1 / 7 / 2 / 9",
       Component: <Day6 />,
       areaName: "day6",
+      type: "png",
     },
     {
       day: 7,
@@ -145,6 +146,7 @@ const initialState = {
       area: "2 / 8 / 3 / 10",
       Component: <Day12 />,
       areaName: "day12",
+      type: "gif",
     },
     {
       day: 13,
@@ -154,6 +156,7 @@ const initialState = {
       area: "3 / 2 / 4 / 3",
       Component: <Day13 />,
       areaName: "day13",
+      type: "gif",
     },
     {
       day: 14,
