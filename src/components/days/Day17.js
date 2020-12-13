@@ -51,11 +51,11 @@ const dots = [
 const Star = styled.div`
   width: ${(props) => `${props.size}px`};
   height: ${(props) => `${props.size}px`};
-  background-color: ${theme.color.c1Dark};
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  background-color: ${theme.color.c3Dark};
+  position: absolute;
+  left: ${props => `${props.l}%`};
+  top: ${props => `${props.t}%`};
+  transform: translate(-50%, -50%) rotate(${props => `${props.rotate}deg`});
   clip-path: polygon(
     50% 0%,
     /* top */ 21% 91%,
@@ -66,7 +66,7 @@ const Star = styled.div`
 `;
 
 export const Day17 = () => {
-  const color = theme.color.c1;
+  const color = theme.color.c3Dark;
   const [size, setSize] = useState(50);
   const ref = useRef(null);
 
@@ -92,7 +92,10 @@ export const Day17 = () => {
         <Dot key={i} x={x.x} y={x.y} size={x.size} backgroundColor={color} />
       ))}
 
-      <Star size={size}></Star>
+      <Star size={size} rotate={0} l={50} t={50} ></Star>
+      <Star size={size * 0.2} rotate={35} l={20} t={20}></Star>
+      <Star size={size * 0.3} rotate={125} l={86} t={73}></Star>
+      <Star size={size * 0.4} rotate={180} l={80} t={25}></Star>
     </DayWrapper>
   );
 };
