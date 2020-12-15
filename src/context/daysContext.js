@@ -20,6 +20,7 @@ import {
   Day19,
   Day21,
   Day22,
+  Day23,
   Day25,
 } from "../components/days";
 
@@ -203,6 +204,7 @@ const initialState = {
       area: "3 / 7 / 5 / 8",
       Component: <Day18 />,
       areaName: "day18",
+      type: "gif",
     },
     {
       day: 19,
@@ -212,6 +214,7 @@ const initialState = {
       area: "3 / 8 / 4 / 9",
       Component: <Day19 />,
       areaName: "day19",
+      type: "gif",
     },
     {
       day: 20,
@@ -220,6 +223,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "3 / 9 / 5 / 10",
       areaName: "day20",
+      type: "gif",
     },
     {
       day: 21,
@@ -246,6 +250,8 @@ const initialState = {
       numSize: fontSizes.m,
       area: "4 / 4 / 5 / 5",
       areaName: "day23",
+      Component: <Day23 />,
+      type: "gif",
     },
     {
       day: 24,
@@ -254,6 +260,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "4 / 6 / 5 / 7",
       areaName: "day24",
+      type: "gif",
     },
     {
       day: 25,
@@ -263,6 +270,7 @@ const initialState = {
       area: "4 / 8 / 5 / 9",
       Component: <Day25 />,
       areaName: "day25",
+      type: "gif",
     },
   ],
 };

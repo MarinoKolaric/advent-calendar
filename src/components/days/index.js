@@ -17,4 +17,5 @@ export { Day18 } from "./Day18";
 export { Day19 } from "./Day19";
 export { Day21 } from "./Day21";
 export { Day22 } from "./Day22";
+export { Day23 } from "./Day23";
 export { Day25 } from "./Day25";
