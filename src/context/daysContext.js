@@ -8,6 +8,7 @@ import {
   Day5,
   Day6,
   Day8,
+  Day9,
   Day10,
   Day11,
   Day12,
@@ -21,6 +22,7 @@ import {
   Day21,
   Day22,
   Day23,
+  Day24,
   Day25,
 } from "../components/days";
 
@@ -120,6 +122,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "2 / 2 / 3 / 3",
+      Component: <Day9 />,
       areaName: "day9",
     },
     {
@@ -260,6 +263,7 @@ const initialState = {
       numSize: fontSizes.m,
       area: "4 / 6 / 5 / 7",
       areaName: "day24",
+      Component: <Day24 />,
       type: "gif",
     },
     {
