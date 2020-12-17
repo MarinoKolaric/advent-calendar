@@ -30,13 +30,12 @@ export const Day24 = () => {
     <DayWrapper>
       <svg width="100%" height="100%" viewBox="-100 -120 200 200">
         <circle cx="0" cy="-50" r="10" fill={theme.color.c4Dark} />
-        <Box class="box" x="-60" y="-40" width="120" height="100" />
-        <Box class="box" x="-70" y="-47" width="140" height="20" />
-        <Stripe class="stripe" x="-20" y="-40" width="40" height="100" />
-        <Stripe class="stripe" x="-25" y="-47" width="50" height="20" />
+        <Box x="-60" y="-40" width="120" height="100" />
+        <Box x="-70" y="-47" width="140" height="20" />
+        <Stripe x="-20" y="-40" width="40" height="100" />
+        <Stripe x="-25" y="-47" width="50" height="20" />
 
         <Ribbon
-          class="ribbon"
           d="
       M 0 -50
       L 30 -50
@@ -45,7 +44,6 @@ export const Day24 = () => {
         />
 
         <Ribbon
-          class="ribbon"
           d="
       M 0 -50
       L -30 -50
