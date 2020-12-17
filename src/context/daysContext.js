@@ -7,6 +7,7 @@ import {
   Day4,
   Day5,
   Day6,
+  Day7,
   Day8,
   Day9,
   Day10,
@@ -105,6 +106,7 @@ const initialState = {
       numPosition: numPosition[1],
       numSize: fontSizes.s,
       area: "1 / 9 / 2 / 10",
+      Component: <Day7 />,
       areaName: "day7",
     },
     {
